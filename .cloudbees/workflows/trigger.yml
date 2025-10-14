@@ -11,7 +11,7 @@ jobs:
   trigger-github-actions:
     steps:
       - name: Run GitHub Actions CI workflow
-        uses: https://github.com/cloudbees-io/ghactions-run-workflow@v1
+        uses: https://github.com/cloudbees-io/ghactions-run-workflow@v2
         with:
           token: ${{ secrets.GHA_TOKEN }}
           org-name: ldorg
