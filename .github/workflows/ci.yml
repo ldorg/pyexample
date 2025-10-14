@@ -51,29 +51,19 @@ jobs:
         run: |
           pytest --junitxml=test-results.xml --cov=app --cov-report=xml --cov-report=term
 
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: test-results.xml
+
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4
         if: success()
         with:
           file: ./coverage.xml
           fail_ci_if_error: false
-
-      # ========================================
-      # The following is unneeded as CloudBees Unify is triggering the GHA directly
-      # and as a result is able to capture the test results itself.
-      # ========================================
-      # CloudBees Action: Publish Test Results to CloudBees Unify
-      # ----------------------------------------
-      # Update test-type and results-path to match your test framework and output location
-      #
-      # Docs: https://github.com/cloudbees-io-gha/publish-test-results
-      # ========================================
-      # - name: Publish Test Results to CloudBees Unify
-      #   uses: cloudbees-io-gha/publish-test-results@v2
-      #   if: success() || failure()
-      #   with:
-      #     test-type: junit
-      #     results-path: test-results.xml
 
   lint:
     runs-on: ubuntu-latest
