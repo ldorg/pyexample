@@ -30,7 +30,7 @@ jobs:
         run: |
           pip install -r requirements-dev.txt
           pytest --junitxml=test-results.xml --cov=app --cov-report=xml --cov-report=term
-          cat ${{ cloudbees.workspace }}/coverage.xml > $CLOUDBEES_OUTPUTS/CODE_COVERAGE
+          cat coverage.xml >> $CLOUDBEES_OUTPUTS/CODE_COVERAGE
 
           echo "DEBUG"
           ls
@@ -51,3 +51,4 @@ jobs:
             ## Test code coverage
 
             ${{ steps.unit-tests.outputs.CODE_COVERAGE }}
+          format: MARKDOWN
