@@ -75,11 +75,13 @@ jobs:
           content: |-
             ## Snyk SAST results
 
-            Critical count: ${{steps.snyk-sast.outputs.critical-count}}
-            Very high count: ${{steps.snyk-sast.outputs.very-high-count}}
-            High count: ${{steps.snyk-sast.outputs.high-count}}
-            Medium count: ${{steps.snyk-sast.outputs.medium-count}}
-            Low count: ${{steps.snyk-sast.outputs.low-count}}
+            | Severity | Count |
+            | --- | --- |
+            | Critical | ${{steps.snyk-sast.outputs.critical-count}} |
+            | Very High | ${{steps.snyk-sast.outputs.very-high-count}} |
+            | High | ${{steps.snyk-sast.outputs.high-count}} |
+            | Medium | ${{steps.snyk-sast.outputs.medium-count}} |
+            | Low | ${{steps.snyk-sast.outputs.low-count}} |
 
   sonarqube:
     needs:
@@ -100,8 +102,10 @@ jobs:
           content: |-
             ## Sonar scan results
 
-            Critical count: ${{steps.sonar-scan.outputs.critical-count}}
-            Very high count: ${{steps.sonar-scan.outputs.very-high-count}}
-            High count: ${{steps.sonar-scan.outputs.high-count}}
-            Medium count: ${{steps.sonar-scan.outputs.medium-count}}
-            Low count: ${{steps.sonar-scan.outputs.low-count}}
+            | Severity | Count |
+            | --- | --- |
+            | Critical | ${{steps.sonar-scan.outputs.critical-count}} |
+            | Very High | ${{steps.sonar-scan.outputs.very-high-count}} |
+            | High | ${{steps.sonar-scan.outputs.high-count}} |
+            | Medium | ${{steps.sonar-scan.outputs.medium-count}} |
+            | Low | ${{steps.sonar-scan.outputs.low-count}} |
