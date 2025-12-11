@@ -1,9 +1,0 @@
-flask==3.0.0
-werkzeug==3.0.1
-
-# Vulnerable dependencies added for demo purposes
-aiohttp==3.9.1
-certifi==2024.2.2
-tornado==6.4.0
-django==4.2.13
-idna==3.6
