@@ -27,7 +27,7 @@ jobs:
         name: Get source code
       - name: Run unit tests
         id: unit-tests
-        uses: docker://python:3.14-slim
+        uses: docker://python:3.13
         kind: test
         run: |
           pip install -r requirements-dev.txt
