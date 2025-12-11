@@ -7,17 +7,6 @@ on:
       - "**"
   workflow_dispatch:
 
-# Steps
-# - Test (python)
-# - parallel scans
-#   - Synk
-#   - Sonarqube
-# - package (python)
-# - Docker build
-# - Snyk container scan
-# - Docker push
-# - Post (always) get metrics collection and send emails
-
 jobs:
   test:
     outputs:
